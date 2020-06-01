@@ -1,1 +1,13 @@
-This is my first git project.
+pipeline{
+agent any
+tools{
+maven "3.6.3"
+}
+stages{
+stage("Maven Build"){
+steps{
+bat mvn --version
+bat mvn clean install
+}
+}
+}
